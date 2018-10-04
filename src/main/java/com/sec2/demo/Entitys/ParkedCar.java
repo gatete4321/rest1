@@ -31,7 +31,9 @@ public class ParkedCar
 	private List<ParkingTicket> pt;
 	
 	
-	
+	/*
+	 * for getting tickets
+	 */
 
 	public List<ParkingTicket> getPt() {
 		return pt;
