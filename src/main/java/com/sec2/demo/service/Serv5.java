@@ -16,6 +16,12 @@ import com.sec2.demo.dao.Carsdao;
  */
 import com.sec2.demo.dao.Meterdao;
 
+/*
+ * iyi niya ma parking car tu 
+ * nicyo ishinzwe 
+ * hamwe nokongeramo amatike tu
+ */
+
 @Service
 public class Serv5 implements Serv1{
 
@@ -40,17 +46,19 @@ public class Serv5 implements Serv1{
 		return pc;
 	}
 
-	/*
-	 * iyi niyo gushaka amasaha amaze ikayohereza kuri servise ya polisi ikamuha fine 
-	 * yo kuri yo modoka gusa 
-	 */
+
 
 	@Transactional
 	public void saveCar(ParkedCar pc) {
-		cdao.save(pc);
+		if(cdao.existsById(pc.getLisenceNumber())) {
+		update(pc);
+		}
+		else {
+			cdao.save(pc);
+		}
 	}
-	@Transactional
-	public void updateCar() {
-		
+	public void update(ParkedCar pc) {
+		ParkedCar car=cdao.findById(pc.getLisenceNumber()).orElse(null);
 	}
+
 }

@@ -39,10 +39,11 @@ public class Ctrl3 {
 	@PostMapping("/officer/add")
 	public PoliceOfficer addOfficer(@RequestBody PoliceOfficer po) {
 
+		System.err.println(po.getId()+""+po.getBadgeNumber());
 		PoliceOfficer officer=new PoliceOfficer();
 		officer.setBadgeNumber(po.getBadgeNumber());
 		officer.setName(po.getName());
 		s.savePolicie(officer);
-		return null;
+		return po;
 	}
 }

@@ -34,9 +34,14 @@ public class Serv7 implements Polices {
 	 */
 	@Transactional
 	public void savePolicie(PoliceOfficer po) {
+		if(pdao.existsById(po.getId())) {
+			updatePolicie(po);
+		}
+		else {
 		pdao.save(po);
+		}
 	}
-	public void updatePolicie() {
+	public void updatePolicie(PoliceOfficer po) {
 		
 	}
 
