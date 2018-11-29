@@ -1,0 +1,14 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://167.99.89.30:3306/wawupay?useUnicode=true&characterEncoding=UTF-8
+    username: admin
+    password: Wawu.2018
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.model
+img:
+  filePath: "/home/fileStorage/"
+
